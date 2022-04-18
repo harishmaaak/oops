@@ -1,0 +1,34 @@
+package abstraction;
+public abstract class India {
+    public void aadhar(){
+        System.out.println("Aadhar");
+    }
+    public void voterId(){
+        System.out.println("voter id");
+    }
+
+    abstract void culture();
+    abstract void food();
+}
+package abstraction;
+public class TamilNadu extends India{
+    public void aadhar(){
+        System.out.println("Aadhar");
+    }
+    public void voterId(){
+        System.out.println("voter id");
+    }
+    void culture(){
+        System.out.println("tamil culture");
+    }
+    void food(){
+        System.out.println("tamilnadu food");
+    }
+    public static void main(String[] args){
+        TamilNadu tamilNadu = new TamilNadu();
+        tamilNadu.aadhar();
+        tamilNadu.voterId();
+        tamilNadu.culture();
+        tamilNadu.food();
+    }
+}
