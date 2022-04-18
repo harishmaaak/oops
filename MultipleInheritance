@@ -1,0 +1,48 @@
+package admin;
+interface College{
+    String studentId();
+    String studentName();
+    default void syllabus(){
+        System.out.println("syllabus");
+    }
+}
+interface Faculties{
+    String staffName();
+    String staffSalary();
+    String staffDesignation();
+}
+interface CollegeName extends College,Faculties{
+    default void collegeName(){
+    System.out.println("Holycross College");
+    }
+}
+
+public class HolycrossCollege implements CollegeName{
+    public String studentId(){
+        return "101";
+    }
+    public String studentName(){
+        return "Harishmaa";
+     }
+    public String staffName(){
+        return "meghala";
+    }
+    public String staffSalary(){
+        return "10000";
+    }
+    public String staffDesignation(){
+        return "admin";
+    }
+    public static void main(String[] args){
+        HolycrossCollege college = new HolycrossCollege();
+        College obj = college;
+        obj.studentId();
+        System.out.println(college.studentId());
+        System.out.println(college.studentName());
+        college.syllabus();
+        college.collegeName();
+        System.out.println(college.staffName());
+        System.out.println(college.staffDesignation());
+        System.out.println(college.staffSalary());
+    }
+}
